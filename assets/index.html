@@ -1,21 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
   </head>
   <body>
     <h1 id="title">Hello World! Awesome!</h1>
-    <input type="text" name="msg" id="msg" />
+    <label>
+      msg: 
+      <input type="text" name="msg" id="msg" />
+    </label>
+    
     <button id="trigger">Send message</button>
+    
     <script type="text/javascript">
       function fromFlutter(newTitle) {
+        console.log('fromFlutter', newTitle);
         document.getElementById("title").innerHTML = newTitle;
-        sendBack();
+        sendBack('Hello from html');
       }
 
-      function sendBack() {
-        messageHandler.postMessage("Hello from JS");
+      function sendBack(msg) {
+        messageHandler.postMessage(msg);
       }
+      (function() {
+        document.getElementById('trigger').addEventListener('click', function(e) {
+          e.preventDefault()
+          const input = document.getElementById('msg')
+          console.log(input.value)
+          sendBack(input.value)
+        })
+
+      })()
     </script>
   </body>
 </html>

@@ -53,23 +53,11 @@ class _WebViewStackState extends State<WebViewStack> {
     );
   }
 
-/*
-Set.from([
-  JavascriptChannel(
-    name: 'messageHandler',
-    onMessageReceived: (JavascriptMessage message) {
-      _scaffoldKey.currentState.showSnackBar(
-        SnackBar(
-          content: Text(message)
-        )
-      );
-    })
-*/
   // javascript channel - received a message then display in a snackbar
   Set<JavascriptChannel> _createJavascriptChannels(BuildContext context) {
     return {
       JavascriptChannel(
-        name: 'SnackBar',
+        name: 'messageHandler',
         onMessageReceived: (message) {
           ScaffoldMessenger.of(context)
               .showSnackBar(SnackBar(content: Text(message.message)));

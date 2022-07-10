@@ -14,19 +14,17 @@ class ButtonControl extends StatelessWidget {
       future: controller.future,
       builder: (context, snapshot) {
         final WebViewController? controller = snapshot.data;
-        if (snapshot.connectionState != ConnectionState.done ||
-            controller == null) {
-          return FloatingActionButton(
-            child: const Icon(Icons.arrow_upward),
-            onPressed: () {},
-          );
-        }
-
         return FloatingActionButton(
           child: const Icon(Icons.arrow_upward),
           onPressed: () {
-            controller.data!.evaluateJavascript(
-                'fromFlutter("from Flutter: press the button")');
+            if (snapshot.connectionState != ConnectionState.done ||
+                controller == null) {
+              print('controller is not ready');
+            } else {
+              // print(controller);
+              controller.runJavascript(
+                  'fromFlutter("from Flutter: press the button")');
+            }
           },
         );
       },

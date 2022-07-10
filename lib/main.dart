@@ -6,6 +6,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 // import 'src/menu.dart';
 // import 'src/navigation_controls.dart';
 import 'src/web_view_stack.dart';
+import 'src/button_control.dart';
 
 void main() {
   runApp(
@@ -29,21 +30,14 @@ class _WebViewAppState extends State<WebViewApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter WebView'),
-        /*actions: [
+        appBar: AppBar(
+          title: const Text('Flutter WebView'),
+          /*actions: [
           NavigationControls(controller: controller),
           Menu(controller: controller),
         ],*/
-      ),
-      body: WebViewStack(controller: controller),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.arrow_upward),
-        onPressed: () {
-          controller.data!.evaluateJavascript(
-              'fromFlutter("from Flutter: press the button")');
-        },
-      ),
-    );
+        ),
+        body: WebViewStack(controller: controller),
+        floatingActionButton: ButtonControl(controller: controller));
   }
 }
