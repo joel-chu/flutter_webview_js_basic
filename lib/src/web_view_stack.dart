@@ -12,7 +12,7 @@ class WebViewStack extends StatefulWidget {
 }
 
 class _WebViewStackState extends State<WebViewStack> {
-  var loadingPercentage = 0;
+  // var loadingPercentage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class _WebViewStackState extends State<WebViewStack> {
             // load the index.html
             _loadIndexFromFlutterAsset(webViewController, context);
           },
-          onPageStarted: (url) {
+          /* onPageStarted: (url) {
             setState(() {
               loadingPercentage = 0;
             });
@@ -40,15 +40,15 @@ class _WebViewStackState extends State<WebViewStack> {
             setState(() {
               loadingPercentage = 100;
             });
-          },
+          }, */
           javascriptMode: JavascriptMode.unrestricted,
           // create javascript channel to communicate between webpage and flutter
           javascriptChannels: _createJavascriptChannels(context),
         ),
-        if (loadingPercentage < 100)
+        /* if (loadingPercentage < 100)
           LinearProgressIndicator(
             value: loadingPercentage / 100.0,
-          ),
+          ),*/
       ],
     );
   }
@@ -69,6 +69,6 @@ class _WebViewStackState extends State<WebViewStack> {
   // loading html assets
   Future<void> _loadIndexFromFlutterAsset(
       WebViewController controller, BuildContext context) async {
-    await controller.loadFlutterAsset('assets/index.html');
+    await controller.loadFlutterAsset('assets/basic/index.html');
   }
 }

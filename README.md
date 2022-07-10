@@ -1,16 +1,16 @@
 # webview_with_vue3
 
-A new Flutter project.
+This is a demo how to communicate from Flutter to your HTML page, then from your HTML page back to your Flutter app.
 
-## Getting Started
+Reason is I found a lot of really crappy tutorial out in the web. Some of them are outdated, and most of them 
+just couldn't really explain it clearly (and the worst it, write tutorial example without any context)
 
-This project is a starting point for a Flutter application.
+Again, DIY and you will learn better.
 
-A few resources to get you started if this is your first Flutter project:
+## @TODO
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+We will show more sophisticate scenario with Vue and Pinia
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+--- 
+
+Joel Chu (c) 2022
