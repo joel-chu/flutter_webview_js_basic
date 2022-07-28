@@ -11,7 +11,7 @@ Again, DIY and you will learn better.
 
 ## Quicky 
 
-Just show you the import point here, and you can check the source code later and understand it better.
+Just show you the important point here, and you can check the source code later and understand it better.
 
 The most import part is setup your webview, in `lib/src/web_view_stack.dart`
 
@@ -50,7 +50,7 @@ now take a look at the `_createJavascriptChannels`
   }
 ```
 
-Basically, flutter expect the channel to be in a `Set` (see (JavascriptChannelRegistry)[https://pub.dev/documentation/webview_flutter_platform_interface/latest/webview_flutter_platform_interface/JavascriptChannelRegistry-class.html] for more information)
+Basically, flutter expect the channel to be in a `Set` (see [JavascriptChannelRegistry](https://pub.dev/documentation/webview_flutter_platform_interface/latest/webview_flutter_platform_interface/JavascriptChannelRegistry-class.html) for more information)
 
 See the `name: 'messageHandler'`, now in your HTML code (`assets/basic/index.html`):
 
