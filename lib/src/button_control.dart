@@ -23,7 +23,7 @@ class ButtonControl extends StatelessWidget {
             } else {
               // print(controller);
               controller.runJavascript(
-                  'fromFlutter("from Flutter: press the button")');
+                  'FLUTTER_JS_CHANNEL.onmessage("from Flutter: press the button")');
             }
           },
         );

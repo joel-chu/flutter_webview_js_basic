@@ -57,7 +57,7 @@ class _WebViewStackState extends State<WebViewStack> {
   Set<JavascriptChannel> _createJavascriptChannels(BuildContext context) {
     return {
       JavascriptChannel(
-        name: 'messageHandler',
+        name: 'FLUTTER_JS_CHANNEL',
         onMessageReceived: (message) {
           ScaffoldMessenger.of(context)
               .showSnackBar(SnackBar(content: Text(message.message)));

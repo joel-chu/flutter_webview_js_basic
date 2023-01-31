@@ -18,9 +18,11 @@
         document.getElementById("title").innerHTML = newTitle;
         sendBack('Hello from html');
       }
+      // experiement with adding a propery to the flutter object
+      FLUTTER_JS_CHANNEL.onmessage = fromFlutter;
 
       function sendBack(msg) {
-        messageHandler.postMessage(msg);
+        FLUTTER_JS_CHANNEL.postMessage(msg);
       }
       (function() {
         document.getElementById('trigger').addEventListener('click', function(e) {
